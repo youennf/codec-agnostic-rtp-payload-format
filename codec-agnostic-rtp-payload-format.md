@@ -64,8 +64,7 @@ Media packetization and depacketization
 
 As per {{RFC7656}} the generic packetizer will define a Media Packetizer that transforms a single Encoded Stream into one or several RTP packets.
 
-  
- ```
+```
                 Physical Stimulus
                       |
                       V
@@ -109,12 +108,13 @@ As per {{RFC7656}} the generic packetizer will define a Media Packetizer that tr
            +----------------------+   +----------------------+
            |   Media Transport    |   |   Media Transport    |
            +----------------------+   +----------------------+
-
-             Figure 1: Sender Side Concepts in the Media Chain with Application-level Media Encryption 
-             
 ```
+             Figure 1: Sender Side Concepts in the Media Chain
+             With Application-level Media Encryption
 
-These RTP packets are sent over the wire to a receiver media chain matching the sender side, reaching the Media Depacketizer that will reconstruct the Encoded Stream before passing it to the Media Decoder.
+These RTP packets are sent over the wire to the receiver Media Chain that is matching the sender Media Chain.
+On the receiver side, RTP packets are processed by the Media Depacketizer that will implement the generic packetization format to reconstruct the Encoded Stream.
+It will then pass the Encoded Stream to the Media Decoder.
 
 ```
           +----------------------+   +----------------------+
@@ -167,10 +167,9 @@ These RTP packets are sent over the wire to a receiver media chain matching the 
                      |
                      V
              Physical Stimulus
-
-            Figure 2: Receiver Side Concepts of the Media Chain with Application-level Media Encryption 
-
 ```
+            Figure 2: Receiver Side Concepts of the Media Chain
+            With Application-level Media Encryption
  
 This generic packetization does not change how the mapping between one or several encoded or dependant streams are mapped to the RTP streams or how the synchronization sources(s) (SSRC) are assigned. 
 
