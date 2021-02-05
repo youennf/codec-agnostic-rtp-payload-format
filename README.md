@@ -1,2 +1,3 @@
-# codec-agnostic-rtp-payload-format
-Codec agnostic RTP payload format
+Home to codec agnostic RTP payload format proposal
+
+Latest version available <a href="codec-agnostic-rtp-payload-format.html">here</a>
